@@ -1,0 +1,27 @@
+# Build
+target/
+*.class
+*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime data directory (writable, contains user edits)
+data/
+
+# Env files
+.env
+*.env
+
+# Logs
+logs/
+*.log
+.claude/

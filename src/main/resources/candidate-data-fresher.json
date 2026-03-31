@@ -1,0 +1,132 @@
+{
+  "personal": {
+    "name": "Prasheek Kamble",
+    "location": "Dublin, Ireland",
+    "phone": "+353 894268492",
+    "email": "prashikk6@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/prashik-kamble/",
+    "github": "https://github.com/prashdev",
+    "medium": "https://prashax.medium.com/"
+  },
+
+  "summary": "Recent MSc Cybersecurity graduate (NCI Dublin, 2:1) with CEH and CAP certifications. Nokia and Government of India Hall of Fame recognition for responsible vulnerability disclosure. Hands-on experience with Burp Suite, OWASP ZAP, Nmap, and Kali Linux through academic projects and independent security research. Published cybersecurity blog on Medium. Authorised to work in Ireland (Stamp 1G).",
+
+  "experience_level": "ENTRY_LEVEL",
+  "visa_status": "Stamp 1G (Work Authorized in Ireland)",
+
+  "education": [
+    {
+      "degree": "MSc Cybersecurity",
+      "grade": "2:1",
+      "institution": "National College of Ireland",
+      "location": "Dublin",
+      "period": "2023 - 2024",
+      "modules": ["Network Security", "Secure Coding", "Cloud Security", "Risk Management"]
+    },
+    {
+      "degree": "BE Computer Engineering",
+      "institution": "India",
+      "period": "2018 - 2021"
+    }
+  ],
+
+  "hall_of_fame": [
+    {
+      "organisation": "Nokia",
+      "type": "Responsible Vulnerability Disclosure",
+      "description": "Identified and responsibly disclosed a security vulnerability in Nokia's platform, recognised in their official Hall of Fame"
+    },
+    {
+      "organisation": "Government of India (CERT-In / NIC)",
+      "type": "Responsible Vulnerability Disclosure",
+      "description": "Identified and responsibly disclosed a security vulnerability in a Government of India platform, recognised officially"
+    }
+  ],
+
+  "technical_writing": {
+    "medium_articles": [
+      {
+        "title": "Setting Up an AI-Powered Penetration Testing Home Lab Using Penligent AI and DVWA",
+        "platform": "Medium",
+        "link": "https://prashax.medium.com/"
+      }
+    ],
+    "linkedin_posts": [
+      {
+        "topic": "Cybersecurity learning journey and job search progress",
+        "theme": "Professional visibility and community engagement"
+      }
+    ]
+  },
+
+  "current_learning": {
+    "courses": [
+      "ISO 27001 Lead Implementer (Advisera) — ~70% complete",
+      "OSCP preparation",
+      "eWPT preparation"
+    ],
+    "topics": [
+      "OWASP LLM Top 10, AI security (Garak), LLM red-teaming",
+      "Active Directory and cloud security (DevSecOps, CSPM)"
+    ]
+  },
+
+  "experience": [],
+
+  "skills": {
+    "security_tools": ["Burp Suite", "OWASP ZAP", "Nmap", "Metasploit", "Kali Linux", "Wireshark"],
+    "frameworks": ["OWASP Top 10", "OWASP API Security Top 10", "OWASP LLM Top 10", "ISO 27001", "CVSS"],
+    "grc": ["ISO 27001", "DORA", "NIS2", "Risk Assessment", "Gap Analysis"],
+    "languages": ["Python", "Bash", "SQL", "JavaScript"],
+    "ai_security": ["OWASP LLM Top 10", "Prompt Injection", "Garak", "LLM red-teaming"],
+    "other": ["Git", "Docker", "Linux CLI", "Jira", "Notion"]
+  },
+
+  "certifications": [
+    {"name": "Certified Ethical Hacker (CEH)", "issuer": "EC-Council", "status": "Completed", "highlight": true},
+    {"name": "Certified AppSec Practitioner (CAP)", "issuer": "The SecOps Group", "status": "Completed", "highlight": true},
+    {"name": "Microsoft Security Fundamentals (SC-900)", "issuer": "Microsoft", "status": "Completed"},
+    {"name": "eWPT", "issuer": "eLearnSecurity", "status": "In Progress"},
+    {"name": "OSCP", "issuer": "Offensive Security", "status": "In Progress"}
+  ],
+
+  "projects": [
+    {
+      "name": "AI-Powered Penetration Testing Home Lab",
+      "tech": ["Penligent AI", "DVWA", "Kali Linux", "Docker"],
+      "description": "Built a home lab integrating Penligent AI with DVWA to simulate and automate penetration testing workflows, documented in a Medium blog post",
+      "type": "Personal Project"
+    },
+    {
+      "name": "ISO 27001 Gap Assessment Template",
+      "tech": ["ISO 27001", "Risk Management", "GRC"],
+      "description": "Comprehensive ISO 27001 Gap Assessment Template covering all Annex A controls, designed for Irish SME environments with DORA and NIS2 alignment",
+      "type": "GRC Portfolio"
+    },
+    {
+      "name": "Risk Assessment Framework for SMEs",
+      "tech": ["ISO 27001", "DORA", "NIS2", "Risk Assessment"],
+      "description": "Structured Risk Assessment Framework for SMEs incorporating DORA and NIS2 compliance requirements for Irish financial and critical infrastructure sectors",
+      "type": "GRC Portfolio"
+    }
+  ],
+
+  "strengths": [
+    "Independent security research — Nokia and Government of India Hall of Fame recognitions",
+    "Strong analytical thinking through CEH certification and security research",
+    "Published cybersecurity content on Medium and active LinkedIn presence",
+    "Self-directed upskilling across AI security, GRC frameworks, and offensive security certifications",
+    "Successfully relocated from India to Ireland, completed MSc while building professional portfolio"
+  ],
+
+  "target_roles": [
+    "Junior Security Analyst",
+    "Graduate Cybersecurity Analyst",
+    "Junior Penetration Tester",
+    "Entry-level GRC Analyst",
+    "SOC Analyst L1",
+    "Junior AppSec Engineer"
+  ],
+
+  "note_to_ai": "IMPORTANT: This is an ENTRY-LEVEL / FRESH GRADUATE CV. DO NOT include Cubic Telecom, Indusface, or Maharashtra Cyber Cell experience. Emphasize: Education (MSc + BE), Certifications (CEH, CAP, SC-900), Hall of Fame (Nokia, Govt of India), Projects, Medium blog. Hall of Fame recognitions are the STRONGEST differentiator for a fresher. CV should be 1 PAGE. Position as a fresh MSc graduate seeking entry-level cybersecurity opportunities."
+}

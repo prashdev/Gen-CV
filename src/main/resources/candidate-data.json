@@ -1,0 +1,180 @@
+{
+  "personal": {
+    "name": "Prasheek Kamble",
+    "location": "Dublin, Ireland",
+    "phone": "+353 894268492",
+    "email": "prashikk6@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/prashik-kamble/",
+    "github": "https://github.com/prashdev",
+    "medium": "https://prashax.medium.com/"
+  },
+
+  "summary": "Application Security professional with 3+ years of experience across web, API, and mobile penetration testing. 100+ assessments at Indusface for banking and financial clients, 15+ assessments at Cubic Telecom (Dublin), and government security work at Maharashtra Cyber Cell. MSc Cybersecurity (NCI Dublin, 2:1). CEH and CAP certified. Nokia and Government of India Hall of Fame recognition for responsible vulnerability disclosure. Authorised to work in Ireland (Stamp 1G).",
+
+  "experience_level": "MID_LEVEL",
+  "visa_status": "Stamp 1G (Work Authorized in Ireland)",
+
+  "education": [
+    {
+      "degree": "MSc Cybersecurity",
+      "grade": "2:1",
+      "institution": "National College of Ireland",
+      "location": "Dublin",
+      "period": "2023 - 2024",
+      "modules": ["Network Security", "Secure Coding", "Cloud Security", "Risk Management"]
+    },
+    {
+      "degree": "BE Computer Engineering",
+      "institution": "India",
+      "period": "2018 - 2021"
+    }
+  ],
+
+  "hall_of_fame": [
+    {
+      "organisation": "Nokia",
+      "type": "Responsible Vulnerability Disclosure",
+      "description": "Identified and responsibly disclosed a security vulnerability in Nokia's platform, recognised in their official Hall of Fame"
+    },
+    {
+      "organisation": "Government of India (CERT-In / NIC)",
+      "type": "Responsible Vulnerability Disclosure",
+      "description": "Identified and responsibly disclosed a security vulnerability in a Government of India platform, recognised officially"
+    }
+  ],
+
+  "technical_writing": {
+    "medium_articles": [
+      {
+        "title": "Setting Up an AI-Powered Penetration Testing Home Lab Using Penligent AI and DVWA",
+        "platform": "Medium",
+        "link": "https://prashax.medium.com/"
+      }
+    ],
+    "linkedin_posts": [
+      {
+        "topic": "Cybersecurity learning journey and job search progress",
+        "theme": "Professional visibility and community engagement"
+      }
+    ]
+  },
+
+  "current_learning": {
+    "courses": [
+      "ISO 27001 Lead Implementer (Advisera) — ~70% complete",
+      "OSCP preparation",
+      "eWPT preparation"
+    ],
+    "topics": [
+      "OWASP LLM Top 10, AI security (Garak), LLM red-teaming",
+      "Active Directory and cloud security (DevSecOps, CSPM)",
+      "Blue Teaming, SOC operations"
+    ]
+  },
+
+  "experience": [
+    {
+      "title": "Associate Security Engineer (Contract)",
+      "company": "Cubic Telecom",
+      "location": "Dublin, Ireland",
+      "type": "contract",
+      "highlights": [
+        "Conducted 15+ web application and API security assessments using Burp Suite Pro and OWASP methodology, identifying critical vulnerabilities including IDOR, Broken Access Control, and injection flaws",
+        "Performed SAST analysis using Semgrep and SonarQube on source code repositories, reducing false-positive rate through custom rule tuning",
+        "Delivered detailed security assessment reports with CVSS-scored findings and actionable remediation recommendations to development and engineering teams",
+        "Contributed to vulnerability management lifecycle — triaging, prioritising, and tracking remediation of 45+ total security findings across multiple applications",
+        "Supported DevSecOps pipeline integration by embedding SAST tooling into CI/CD workflows"
+      ],
+      "technologies": ["Burp Suite Pro", "OWASP ZAP", "Semgrep", "SonarQube", "Nmap", "GitHub", "Jira", "Confluence"]
+    },
+    {
+      "title": "Associate Information Security Analyst",
+      "company": "Indusface",
+      "location": "India",
+      "period": "March 2021 - November 2022",
+      "type": "full-time",
+      "highlights": [
+        "Executed 100+ vulnerability assessments and penetration tests across web, API, and mobile applications for diverse clients including major financial institutions and banking sector organisations",
+        "Led end-to-end application security engagements for India's top-tier banking clients, ensuring PCI-DSS and regulatory compliance",
+        "Identified and validated security vulnerabilities including authentication bypasses, IDOR, injection flaws, and broken access control using OWASP Top 10 methodology",
+        "Delivered comprehensive security assessment reports with CVSS-scored findings, risk ratings, and prioritised remediation recommendations",
+        "Conducted security research on emerging attack vectors and CVEs to maintain up-to-date exploitation knowledge"
+      ],
+      "technologies": ["Burp Suite Pro", "Nmap", "Metasploit", "Kali Linux", "OWASP ZAP", "Nessus", "MobSF", "Frida"]
+    },
+    {
+      "title": "Cyber Security Analyst",
+      "company": "Maharashtra Cyber Cell",
+      "location": "Mumbai, India",
+      "period": "May 2020 - January 2021",
+      "type": "full-time",
+      "highlights": [
+        "Performed security assessments on government web applications using manual and automated testing methodologies",
+        "Assisted in high-profile cybercrime investigations, applying digital forensics and incident response techniques",
+        "Collaborated with law enforcement agencies on cybercrime cases, providing technical expertise in digital evidence analysis",
+        "Contributed to vulnerability reporting and responsible disclosure processes"
+      ],
+      "technologies": ["Kali Linux", "Burp Suite", "Nmap", "Wireshark", "Autopsy", "FTK Imager", "OSINT tools"]
+    }
+  ],
+
+  "skills": {
+    "appsec_pentesting": ["Web App Pentesting", "API Security Testing", "Mobile Pentesting (Android/iOS)", "SAST", "DAST", "Vulnerability Management", "Threat Modelling"],
+    "security_tools": ["Burp Suite Pro", "OWASP ZAP", "Nessus", "Qualys", "Nmap", "Metasploit", "Semgrep", "SonarQube", "MobSF", "Frida", "Objection", "ADB"],
+    "frameworks": ["OWASP Top 10", "OWASP API Security Top 10", "OWASP LLM Top 10", "PTES", "CVSS", "ISO 27001", "DORA", "NIS2"],
+    "cloud_devsecops": ["AWS IAM", "S3 Security", "EC2", "CSPM concepts", "Docker", "CI/CD pipeline security", "SAST integration"],
+    "languages": ["Python", "Bash", "JavaScript", "SQL"],
+    "grc": ["ISO 27001", "DORA", "NIS2", "Risk Assessment", "Gap Analysis", "Policy Writing"],
+    "ai_security": ["OWASP LLM Top 10", "Prompt Injection", "Garak", "LLM red-teaming"],
+    "other": ["Linux CLI", "Jira", "Confluence", "Notion", "Git", "GitHub"]
+  },
+
+  "certifications": [
+    {"name": "Certified Ethical Hacker (CEH)", "issuer": "EC-Council", "status": "Completed", "highlight": true},
+    {"name": "Certified AppSec Practitioner (CAP)", "issuer": "The SecOps Group", "status": "Completed", "highlight": true},
+    {"name": "Microsoft Security Fundamentals (SC-900)", "issuer": "Microsoft", "status": "Completed"},
+    {"name": "eWPT", "issuer": "eLearnSecurity", "status": "In Progress"},
+    {"name": "OSCP", "issuer": "Offensive Security", "status": "In Progress"},
+    {"name": "ISO 27001 Lead Implementer", "issuer": "Advisera", "status": "In Progress"}
+  ],
+
+  "projects": [
+    {
+      "name": "AI-Powered Penetration Testing Home Lab",
+      "tech": ["Penligent AI", "DVWA", "Kali Linux", "Docker"],
+      "description": "Built a home lab integrating Penligent AI with DVWA to simulate and automate penetration testing workflows, documented in a Medium blog post",
+      "type": "Personal Project"
+    },
+    {
+      "name": "ISO 27001 Gap Assessment Template",
+      "tech": ["ISO 27001", "Risk Management", "GRC"],
+      "description": "Comprehensive ISO 27001 Gap Assessment Template covering all Annex A controls, designed for Irish SME environments with DORA and NIS2 alignment",
+      "type": "GRC Portfolio"
+    },
+    {
+      "name": "Risk Assessment Framework for SMEs",
+      "tech": ["ISO 27001", "DORA", "NIS2", "Risk Assessment"],
+      "description": "Structured Risk Assessment Framework for SMEs incorporating DORA and NIS2 compliance requirements for Irish financial and critical infrastructure sectors",
+      "type": "GRC Portfolio"
+    }
+  ],
+
+  "strengths": [
+    "Clear written and verbal communication through security reports, Medium blog, and client-facing presentations",
+    "Strong analytical thinking across 45+ security assessments and responsible disclosure processes",
+    "Professional technical writing — pentest reports, GRC templates, published blog content",
+    "Adaptability — relocated from India to Ireland, completed MSc while building cybersecurity career",
+    "Continuous learning — AI security, GRC frameworks, offensive security certifications"
+  ],
+
+  "target_roles": [
+    "Penetration Tester",
+    "Product Security Engineer",
+    "Application Security Engineer",
+    "Information Security Analyst",
+    "GRC/Compliance Analyst",
+    "SOC Analyst"
+  ],
+
+  "note_to_ai": "IMPORTANT: This candidate has 3+ YEARS PROFESSIONAL CYBERSECURITY EXPERIENCE with key differentiators: 1) Associate Security Engineer at Cubic Telecom (Dublin) with 15+ assessments, 2) Associate Information Security Analyst at Indusface with 100+ assessments for banking clients, 3) Cyber Security Analyst at Maharashtra Cyber Cell with government security and digital forensics, 4) Nokia and Government of India Hall of Fame, 5) CEH and CAP certified, 6) MSc Cybersecurity (NCI Dublin, 2:1). Position as MID-LEVEL candidate. CV should be 1-2 PAGES."
+}
