@@ -4,22 +4,30 @@
  * and logs CV generation history to Google Sheets.
  *
  * SETUP:
- * 1. Create a Google Sheet (or use existing)
- * 2. Open Extensions > Apps Script
- * 3. Paste this code
- * 4. Update FOLDER_ID and SPREADSHEET_ID below
- * 5. Deploy as Web App (Execute as: Me, Access: Anyone)
- * 6. Copy the web app URL and set it as GOOGLE_SHEETS_WEBHOOK env var in Render
+ * 1. Go to Google Sheets > create new spreadsheet (name it "CV Generation History")
+ * 2. Copy the Spreadsheet ID from the URL (between /d/ and /edit)
+ * 3. Open Extensions > Apps Script
+ * 4. Paste this entire code
+ * 5. Update SPREADSHEET_ID below with your Sheet ID
+ * 6. Click Deploy > New Deployment > Web App
+ *    - Execute as: Me
+ *    - Who has access: Anyone
+ * 7. Copy the web app URL
+ * 8. In Render: add env var GOOGLE_SHEETS_WEBHOOK = <web app URL>
  *
  * @author Prasheek Kamble
  */
 
 // ============================================================
-// CONFIGURATION — UPDATE THESE WITH YOUR IDS
+// CONFIGURATION — UPDATE SPREADSHEET_ID WITH YOUR SHEET ID
 // ============================================================
-const FOLDER_ID = 'YOUR_GOOGLE_DRIVE_FOLDER_ID';  // Parent folder for CV files
-const SPREADSHEET_ID = 'YOUR_GOOGLE_SHEET_ID';     // Google Sheet for logging
-const SHEET_NAME = 'CV History';
+const FOLDER_ID = '1B5fAUjKD3AWkdpL3bSSLDzaQzwQu6jV2';  // GenCV folder
+const SPREADSHEET_ID = 'YOUR_GOOGLE_SHEET_ID';             // UPDATE THIS
+const SHEET_NAME = 'Sheet1';
+
+// Subfolder names (must match your Drive folder structure)
+const PDF_FOLDER_NAME = 'Pdf Files';
+const LATEX_FOLDER_NAME = 'Latex Files';
 
 // ============================================================
 // MAIN WEBHOOK HANDLER
@@ -28,13 +36,13 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
 
-    // Save PDF to Drive
+    // Save PDF to Drive > Pdf Files subfolder
     let pdfLink = '';
     if (data.pdfBase64) {
       pdfLink = savePdfToDrive(data);
     }
 
-    // Save LaTeX to Drive
+    // Save LaTeX to Drive > Latex Files subfolder
     let latexLink = '';
     if (data.latexContent) {
       latexLink = saveLatexToDrive(data);
@@ -59,18 +67,18 @@ function doPost(e) {
 }
 
 // ============================================================
-// SAVE PDF TO GOOGLE DRIVE
+// SAVE PDF TO GOOGLE DRIVE > "Pdf Files" SUBFOLDER
 // ============================================================
 function savePdfToDrive(data) {
-  const folder = DriveApp.getFolderById(FOLDER_ID);
+  const parentFolder = DriveApp.getFolderById(FOLDER_ID);
 
-  // Get or create PDF subfolder
+  // Find existing "Pdf Files" subfolder
   let pdfFolder;
-  const pdfFolders = folder.getFoldersByName('pdf');
+  const pdfFolders = parentFolder.getFoldersByName(PDF_FOLDER_NAME);
   if (pdfFolders.hasNext()) {
     pdfFolder = pdfFolders.next();
   } else {
-    pdfFolder = folder.createFolder('pdf');
+    pdfFolder = parentFolder.createFolder(PDF_FOLDER_NAME);
   }
 
   const fileName = buildFileName(data, 'pdf');
@@ -78,31 +86,29 @@ function savePdfToDrive(data) {
   const blob = Utilities.newBlob(decoded, 'application/pdf', fileName);
   const file = pdfFolder.createFile(blob);
 
-  // Make shareable
   file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
   return file.getUrl();
 }
 
 // ============================================================
-// SAVE LATEX TO GOOGLE DRIVE
+// SAVE LATEX TO GOOGLE DRIVE > "Latex Files" SUBFOLDER
 // ============================================================
 function saveLatexToDrive(data) {
-  const folder = DriveApp.getFolderById(FOLDER_ID);
+  const parentFolder = DriveApp.getFolderById(FOLDER_ID);
 
-  // Get or create LaTeX subfolder
+  // Find existing "Latex Files" subfolder
   let latexFolder;
-  const latexFolders = folder.getFoldersByName('latex');
+  const latexFolders = parentFolder.getFoldersByName(LATEX_FOLDER_NAME);
   if (latexFolders.hasNext()) {
     latexFolder = latexFolders.next();
   } else {
-    latexFolder = folder.createFolder('latex');
+    latexFolder = parentFolder.createFolder(LATEX_FOLDER_NAME);
   }
 
   const fileName = buildFileName(data, 'tex');
   const blob = Utilities.newBlob(data.latexContent, 'text/plain', fileName);
   const file = latexFolder.createFile(blob);
 
-  // Make shareable
   file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
   return file.getUrl();
 }
@@ -119,6 +125,7 @@ function buildFileName(data, extension) {
 
 // ============================================================
 // LOG TO GOOGLE SHEETS
+// Columns: Date | Company | Job Description | Match % | PDF Link | LaTeX Link | Skill Gaps | 7-Day Plan | 14-Day Plan | Interview Questions
 // ============================================================
 function logToSheet(data, pdfLink, latexLink) {
   const sheet = getOrCreateSheet();
@@ -126,16 +133,16 @@ function logToSheet(data, pdfLink, latexLink) {
   const coachBrief = parseCoachBrief(data.coachBrief);
 
   const row = [
-    new Date(),                                          // Date
-    data.companyName || '',                              // Company
-    cleanJobDescription(data.jobDescription || ''),      // Job Description
-    data.matchScore || '',                               // Match %
-    pdfLink,                                             // PDF Link
-    latexLink,                                           // LaTeX Link
-    coachBrief.skillGaps,                                // Skill Gaps
-    coachBrief.sevenDayPlan,                             // 7-Day Plan
-    coachBrief.fourteenDayPlan,                          // 14-Day Plan
-    coachBrief.interviewQuestions                         // Interview Questions
+    new Date(),                                          // A: Date
+    data.companyName || '',                              // B: Company
+    cleanJobDescription(data.jobDescription || ''),      // C: Job Description
+    data.matchScore || '',                               // D: Match %
+    pdfLink,                                             // E: PDF Link
+    latexLink,                                           // F: LaTeX Link
+    coachBrief.skillGaps,                                // G: Skill Gaps
+    coachBrief.sevenDayPlan,                             // H: 7-Day Plan
+    coachBrief.fourteenDayPlan,                          // I: 14-Day Plan
+    coachBrief.interviewQuestions                         // J: Interview Questions
   ];
 
   sheet.appendRow(row);
@@ -151,8 +158,10 @@ function getOrCreateSheet() {
 
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
+  }
 
-    // Add headers
+  // Check if headers exist
+  if (sheet.getLastRow() === 0) {
     const headers = [
       'Date', 'Company', 'Job Description', 'Match %',
       'PDF Link', 'LaTeX Link', 'Skill Gaps',
@@ -170,14 +179,14 @@ function getOrCreateSheet() {
     // Set column widths
     sheet.setColumnWidth(1, 150);   // Date
     sheet.setColumnWidth(2, 150);   // Company
-    sheet.setColumnWidth(3, 300);   // JD
+    sheet.setColumnWidth(3, 300);   // Job Description
     sheet.setColumnWidth(4, 80);    // Match %
     sheet.setColumnWidth(5, 200);   // PDF Link
     sheet.setColumnWidth(6, 200);   // LaTeX Link
     sheet.setColumnWidth(7, 250);   // Skill Gaps
-    sheet.setColumnWidth(8, 250);   // 7-Day
-    sheet.setColumnWidth(9, 250);   // 14-Day
-    sheet.setColumnWidth(10, 250);  // Interview
+    sheet.setColumnWidth(8, 250);   // 7-Day Plan
+    sheet.setColumnWidth(9, 250);   // 14-Day Plan
+    sheet.setColumnWidth(10, 250);  // Interview Questions
 
     // Freeze header row
     sheet.setFrozenRows(1);
@@ -200,14 +209,14 @@ function formatDataRow(sheet, rowNum) {
   }
 
   // Date column format
-  sheet.getRange(rowNum, 1).setNumberFormat('dd-MMM-yyyy HH:mm');
+  sheet.getRange(rowNum, 1).setNumberFormat('yyyy-MM-dd HH:mm');
 
   // Wrap text for long columns
-  sheet.getRange(rowNum, 3).setWrap(true);  // JD
-  sheet.getRange(rowNum, 7).setWrap(true);  // Skill Gaps
-  sheet.getRange(rowNum, 8).setWrap(true);  // 7-Day
-  sheet.getRange(rowNum, 9).setWrap(true);  // 14-Day
-  sheet.getRange(rowNum, 10).setWrap(true); // Interview
+  sheet.getRange(rowNum, 3).setWrap(true);   // Job Description
+  sheet.getRange(rowNum, 7).setWrap(true);   // Skill Gaps
+  sheet.getRange(rowNum, 8).setWrap(true);   // 7-Day Plan
+  sheet.getRange(rowNum, 9).setWrap(true);   // 14-Day Plan
+  sheet.getRange(rowNum, 10).setWrap(true);  // Interview Questions
 }
 
 // ============================================================
@@ -217,7 +226,7 @@ function cleanJobDescription(jd) {
   return jd
     .replace(/\s+/g, ' ')
     .trim()
-    .substring(0, 500);  // Limit to 500 chars in sheet
+    .substring(0, 500);
 }
 
 // ============================================================
@@ -257,4 +266,31 @@ function parseCoachBrief(coachBrief) {
   }
 
   return result;
+}
+
+// ============================================================
+// TEST FUNCTION (run manually to verify setup)
+// ============================================================
+function testSetup() {
+  // Test Drive access
+  try {
+    const folder = DriveApp.getFolderById(FOLDER_ID);
+    Logger.log('✅ Drive folder found: ' + folder.getName());
+
+    const pdfFolders = folder.getFoldersByName(PDF_FOLDER_NAME);
+    Logger.log('✅ Pdf Files subfolder: ' + (pdfFolders.hasNext() ? 'Found' : 'Will be created'));
+
+    const latexFolders = folder.getFoldersByName(LATEX_FOLDER_NAME);
+    Logger.log('✅ Latex Files subfolder: ' + (latexFolders.hasNext() ? 'Found' : 'Will be created'));
+  } catch (e) {
+    Logger.log('❌ Drive error: ' + e.toString());
+  }
+
+  // Test Sheet access
+  try {
+    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+    Logger.log('✅ Spreadsheet found: ' + ss.getName());
+  } catch (e) {
+    Logger.log('❌ Sheet error: ' + e.toString());
+  }
 }
