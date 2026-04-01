@@ -2,12 +2,10 @@
 # 1. Build stage: Compiles the application using Maven
 # 2. Runtime stage: Runs the compiled JAR with minimal footprint
 
-# --- Build Stage ---
-FROM eclipse-temurin:17-jdk-alpine AS builder
+# --- Build Stage (use full Maven image instead of Alpine + apk) ---
+FROM maven:3.9-eclipse-temurin-17 AS builder
 
 WORKDIR /app
-
-RUN apk add --no-cache maven
 
 # Copy pom.xml first for dependency caching
 COPY pom.xml .
@@ -19,8 +17,8 @@ RUN mvn clean package -DskipTests -B
 # --- Runtime Stage ---
 FROM eclipse-temurin:17-jre-alpine
 
-LABEL maintainer="Pranav Ghorpade <ghorpade.ire@gmail.com>"
-LABEL description="CV Generator"
+LABEL maintainer="Prasheek Kamble <prashikk6@gmail.com>"
+LABEL description="CV Generator - Powered by Claude AI"
 LABEL version="1.0"
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
