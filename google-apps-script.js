@@ -22,7 +22,7 @@
 // CONFIGURATION — UPDATE SPREADSHEET_ID WITH YOUR SHEET ID
 // ============================================================
 const FOLDER_ID = '1B5fAUjKD3AWkdpL3bSSLDzaQzwQu6jV2';  // GenCV folder
-const SPREADSHEET_ID = 'YOUR_GOOGLE_SHEET_ID';             // UPDATE THIS
+const SPREADSHEET_ID = '1UEKGmqFcJgY0dUR4oe5JlwzLgNlCuv06xyPz0Dhooqw';
 const SHEET_NAME = 'Sheet1';
 
 // Subfolder names (must match your Drive folder structure)
