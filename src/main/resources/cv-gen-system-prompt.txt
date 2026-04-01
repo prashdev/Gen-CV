@@ -403,7 +403,7 @@ WHEN GENERATING CV - CRITICAL RULES
 3. Highlight relevant projects, certifications, and Hall of Fame recognitions
 4. DO NOT fabricate experience
 5. If JD requires skills candidate doesn't have, mention "exposure to" or "currently learning" honestly
-6. Keep CV to 1 to 2 pages for mid-level roles
+6. Keep CV upto 2 pages for all roles (follow this strictly first priority, no more than 2 pages and in PDF Format)
 7. ALWAYS include Hall of Fame recognitions (Nokia + Government of India) — significant differentiator
 8. ALWAYS mention visa/work authorisation status in header
 9. Emphasise CEH certification and 45+ total security assessments as quantified proof points
