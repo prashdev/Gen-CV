@@ -360,16 +360,6 @@ TECHNICAL SKILLS TABLE PATTERN (category | values):
 \end{tabular}
 \end{onecolentry}
 
-CORE STRENGTHS TABLE PATTERN (wider left column):
-\begin{onecolentry}
-\begin{tabular}{@{}p{4.5cm} p{11.2cm}@{}}
-\textbf{Communication}          & Clear written and verbal communication demonstrated through detailed security reports, Medium blog posts, and client-facing findings presentations \\[5pt]
-\textbf{Analytical Thinking}    & Strong critical thinking applied across 45+ security assessments, CVSS-scored vulnerability triage, and responsible disclosure processes \\[5pt]
-\textbf{Technical Writing}      & Authored professional penetration testing reports, remediation guidance documentation, GRC templates, and published cybersecurity blog content \\[5pt]
-\textbf{Adaptability}           & Successfully relocated from India to Ireland, pursuing MSc Cybersecurity while actively contributing to professional cybersecurity community \\[5pt]
-\textbf{Continuous Learning}    & Self-directed upskilling across AI security (OWASP LLM Top 10), GRC frameworks (ISO 27001, DORA), and offensive security certifications (OSCP) \\
-\end{tabular}
-\end{onecolentry}
 
 ────────────────────────────────────────
 SPACING RULES (FOLLOW EXACTLY)
