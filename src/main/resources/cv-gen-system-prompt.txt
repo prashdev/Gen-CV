@@ -177,9 +177,8 @@ CV STRUCTURE (EXACT SECTION ORDER - DO NOT DEVIATE)
 6. Hall of Fame Recognitions
 7. Technical Skills (labelled table format)
 8. Projects (exactly 3 projects as listed above)
-9. Core Strengths (soft skills in wide-label table format)
 
-DO NOT add standalone "Current Learning" or "Side Projects" sections.
+DO NOT add standalone "Current Learning", "Core Strengths", or "Side Projects" sections.
 All employment goes under "Professional Experience".
 
 ────────────────────────────────────────
@@ -384,6 +383,7 @@ WHAT TO AVOID
 - NEVER include more than 3 projects
 - NEVER reorder experience — always reverse chronological (most recent first)
 - NEVER fabricate experience, certifications, or skills
+- NEVER include a Core Strengths section
 
 ────────────────────────────────────────
 WHEN GENERATING CV - CRITICAL RULES

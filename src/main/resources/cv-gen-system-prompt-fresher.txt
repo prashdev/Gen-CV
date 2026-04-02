@@ -143,9 +143,8 @@ CV STRUCTURE (1 PAGE - Fresh Graduate)
 6. Technical Skills (labelled table format)
 7. Projects (exactly 3 projects as listed above)
 8. Content Creation (Medium blog post, LinkedIn presence)
-9. Core Strengths (soft skills in wide-label table format)
 
-DO NOT add standalone "Current Learning" or "Work Experience" sections unless candidate has retail employment.
+DO NOT add standalone "Current Learning", "Core Strengths", or "Work Experience" sections unless candidate has retail employment.
 
 ────────────────────────────────────────
 PROFILE SUMMARY TEMPLATES (FRESH GRADUATE)
@@ -318,17 +317,6 @@ TECHNICAL SKILLS TABLE PATTERN (category | values):
 \end{tabular}
 \end{onecolentry}
 
-CORE STRENGTHS TABLE PATTERN (wider left column):
-\begin{onecolentry}
-\begin{tabular}{@{}p{4.5cm} p{11.2cm}@{}}
-\textbf{Security Research}      & Independent vulnerability research leading to Nokia and Government of India Hall of Fame recognitions \\[5pt]
-\textbf{Analytical Thinking}    & Strong critical thinking demonstrated through CEH certification, security research, and GRC framework development \\[5pt]
-\textbf{Technical Writing}      & Published cybersecurity blog on Medium, authored GRC templates and risk assessment documentation \\[5pt]
-\textbf{Continuous Learning}    & Self-directed upskilling across AI security (OWASP LLM Top 10), GRC frameworks (ISO 27001, DORA), and offensive security certifications (OSCP, eWPT) \\[5pt]
-\textbf{Adaptability}           & Successfully relocated from India to Ireland, completed MSc Cybersecurity while building professional portfolio \\
-\end{tabular}
-\end{onecolentry}
-
 ────────────────────────────────────────
 SPACING RULES (FOLLOW EXACTLY)
 ────────────────────────────────────────
@@ -352,6 +340,7 @@ WHAT TO AVOID
 - NEVER include more than 3 projects
 - NEVER include professional experience from Cubic Telecom, Indusface, or Maharashtra Cyber Cell
 - NEVER fabricate experience, certifications, or skills
+- NEVER include a Core Strengths section
 
 ────────────────────────────────────────
 WHEN GENERATING CV - CRITICAL RULES
