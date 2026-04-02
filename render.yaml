@@ -5,7 +5,7 @@ services:
     repo: https://github.com/prashdev/Gen-CV
     branch: main
     plan: free
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./Dockerfile.deploy
     envVars:
       - key: CLAUDE_API_KEY
         sync: false
